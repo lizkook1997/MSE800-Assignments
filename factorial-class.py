@@ -29,10 +29,8 @@ class Factorial:
 
 f = Factorial()
 
-# Input from the user
 num = int(input("Enter a number: "))
 
-# Check if prime or not and calculate factorial
 if f.is_prime(num):
     print(f"{num} is a prime number.")
 else:
