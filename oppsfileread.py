@@ -1,4 +1,6 @@
 import pandas as pd
+import tensorflow as tf
+import matplotlib.pyplot as plt
 
 class DataReader:
     def __init__(self, filepath):
@@ -22,16 +24,33 @@ class DataReader:
         else:
             print("No data loaded. Call read() first.")
 
-# File paths
-files = [
-    "C:/Users/rishu/Downloads/Sample_data_2.parquet",
-    "C:/Users/rishu/Downloads/sample_text.txt",
-    "C:/Users/rishu/OneDrive/Desktop/MSE800-Assignments/sample_junk_mail.csv"  
-]
+def load_cifar10_sample():
+    print("\nLoading CIFAR-10 dataset...")
+    (x_train, y_train), (_, _) = tf.keras.datasets.cifar10.load_data()
+    print("CIFAR-10 sample shape:", x_train.shape)
+    
+    # Display the first two images with labels
+    for i in range(2):  # 0 and 1
+        plt.imshow(x_train[i])
+        plt.title(f"Label: {y_train[i][0]}")
+        plt.axis('off')
+        plt.show()
 
-# Read and show each file
-for file in files:
-    print(f"\nReading file: {file}")
-    reader = DataReader(file)
-    reader.read()
-    reader.show_head(2)  
+def main():
+    files = [
+        "C:/Users/rishu/Downloads/Sample_data_2.parquet",
+        "C:/Users/rishu/Downloads/sample_text.txt",
+        "C:/Users/rishu/OneDrive/Desktop/MSE800-Assignments/sample_junk_mail.csv"
+    ]
+
+    for file in files:
+        print(f"\nReading file: {file}")
+        reader = DataReader(file)
+        reader.read()
+        reader.show_head(2)
+
+    load_cifar10_sample()
+
+# Entry point
+if __name__ == "__main__":
+    main()
