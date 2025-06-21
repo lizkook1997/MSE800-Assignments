@@ -11,3 +11,8 @@ print(merged_dict)
 # Then we merged those filtered results using dictionary unpacking (**).
 # Only 'a' from disct1 and 'e' from disct2 are vowels.
 # Final output is: {'a': 1, 'e': 5}
+
+
+# x, _, y =(1,"check", 3)
+# print(x)
+# print(_)

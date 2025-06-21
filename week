@@ -1,0 +1,6 @@
+disct1 = {'a':1, 'b': 2}
+disct2 = {'b':1, 'c': 2}
+disct3 = {'d':1, 'e': 2}
+
+merged_dict = {**disct1, disct2**, **disct3}
+print(merged_dict)

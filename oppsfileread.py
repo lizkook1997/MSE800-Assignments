@@ -28,7 +28,7 @@ def load_cifar10_sample():
     print("\nLoading CIFAR-10 dataset...")
     (x_train, y_train), (_, _) = tf.keras.datasets.cifar10.load_data()
     print("CIFAR-10 sample shape:", x_train.shape)
-    
+                    
     # Display the first two images with labels
     for i in range(2):  # 0 and 1
         plt.imshow(x_train[i])

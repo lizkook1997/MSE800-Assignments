@@ -1,9 +1,8 @@
+from math import prod
+
 def factorial(n):
-    result = 1
-    for i in range(2, n + 1):
-        result *= i
-    return result
+    return prod(range(1, n + 1))
 
 # Count from 1 to 4 and print factorial of each
-for num in range(0, 5):
-    print(f"Factorial of {num} is {factorial(num)}")
+for num in range(5):
+    print(factorial(num))
